@@ -27,3 +27,6 @@ func get_piece_data(cell: Vector2i) -> String:
 		if data != null and data.get_custom_data(piece):
 			return piece	
 	return ""
+
+func get_tile_data(cell: Vector2i) -> TileData:
+	return movable_layer.get_cell_tile_data(cell)
