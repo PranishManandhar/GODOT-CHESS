@@ -24,6 +24,10 @@ CHESS_UTILITY="*uid://bc6xg8uy6m0gu"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom_font="uid://cmg033hbexyap"
+
 [input]
 
 click={

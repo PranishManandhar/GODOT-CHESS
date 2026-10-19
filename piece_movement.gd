@@ -27,7 +27,7 @@ func move_straight(dir: Array[Vector2i], data: TileData, possible_movement_cells
 	
 	return possible_movement_cells
 
-#piecemovement info
+
 func get_pawn_movement_data(cell: Vector2i) -> Array[Vector2i]:
 	var possible_movement_cells: Array[Vector2i] = []
 	var data = CHESS_UTILITY.get_tile_data(cell)
@@ -47,6 +47,7 @@ func get_pawn_movement_data(cell: Vector2i) -> Array[Vector2i]:
 	if CHESS_UTILITY.is_empty(forward):
 		possible_movement_cells.append(forward)
 
+	
 	for sides in [Vector2i.LEFT, Vector2i.RIGHT]:
 		var target = forward + sides
 		
@@ -97,8 +98,7 @@ func get_knight_movement_data(cell: Vector2i) -> Array[Vector2i]:
 		
 		if (CHESS_UTILITY.is_empty(next_cell) or CHESS_UTILITY.is_enemy(next_cell, data)):
 			possible_movement_cells.append(next_cell)
-
-		
+	
 	return possible_movement_cells
 
 func get_king_movement_data(cell: Vector2i) -> Array[Vector2i]:

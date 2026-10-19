@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dos1vnl3ufbcn"]
+
+[ext_resource type="Script" uid="uid://bbay4o73q7cvt" path="res://promotion_ui.gd" id="1_ulp1q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcwox"]
+bg_color = Color(1, 0.7921569, 0.627451, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.41199347, 0.25966325, 0.1336202, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=791838152]
+script = ExtResource("1_ulp1q")
+
+[node name="Promotion_ui" type="Control" parent="." unique_id=234336713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Promotion_ui" unique_id=463100998]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 201.0
+offset_right = 766.0
+offset_bottom = 395.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcwox")
+
+[node name="MarginContainer" type="MarginContainer" parent="Promotion_ui/Panel" unique_id=1740463281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 52
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="GridContainer" type="GridContainer" parent="Promotion_ui/Panel/MarginContainer" unique_id=1954897679]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
+[node name="KnightButton" type="Button" parent="Promotion_ui/Panel/MarginContainer/GridContainer" unique_id=203467356]
+layout_mode = 2
+text = "Knight"
+
+[node name="BishopButton" type="Button" parent="Promotion_ui/Panel/MarginContainer/GridContainer" unique_id=496992785]
+layout_mode = 2
+text = "Bishop"
+
+[node name="QueenButton" type="Button" parent="Promotion_ui/Panel/MarginContainer/GridContainer" unique_id=251549472]
+layout_mode = 2
+text = "Queen"
+
+[node name="CastleButton" type="Button" parent="Promotion_ui/Panel/MarginContainer/GridContainer" unique_id=2060595173]
+layout_mode = 2
+text = "Castle"
+
+[node name="Label" type="RichTextLabel" parent="Promotion_ui" unique_id=35681030]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 172.0
+offset_right = 663.0
+offset_bottom = 219.0
+bbcode_enabled = true
+text = "[outline_size=10]
+[font_size=20][b]PROMOTION[/b][/font_size]
+[/outline_size]"
+fit_content = true
+autowrap_mode = 2
+
+[connection signal="pressed" from="Promotion_ui/Panel/MarginContainer/GridContainer/KnightButton" to="." method="_on_knight_button_pressed"]
+[connection signal="pressed" from="Promotion_ui/Panel/MarginContainer/GridContainer/BishopButton" to="." method="_on_bishop_button_pressed"]
+[connection signal="pressed" from="Promotion_ui/Panel/MarginContainer/GridContainer/QueenButton" to="." method="_on_queen_button_pressed"]
+[connection signal="pressed" from="Promotion_ui/Panel/MarginContainer/GridContainer/CastleButton" to="." method="_on_castle_button_pressed"]
